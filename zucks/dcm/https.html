@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>Test</title>
+    <script type="text/javascript">
+
+        function getParam(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        zucksIdfa = {
+          ida: getParam('ida'),
+          lat: 0
+        }
+
+        document.write('<script type="text/javascript" src="//h.zucks.net.zimg.jp/j?f=' + getParam('fid') + '"><\/script>');
+
+    </script>
+</head>
+<body>
+</body>
+</html>
