@@ -6,11 +6,13 @@
   <meta name="keywords" content="">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>frame_id specifiable test page</title>
+  <title>frame_id specifiable test page (version 0.0.1)</title>
   <style type="text/css">
 
+    @import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+
     * {
-      font-family: Quicksand, 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+      font-family: 'Noto Sans Japanese', Quicksand, 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
       margin: 0;
       padding: 0;
     }
@@ -25,15 +27,20 @@
     }
 
     div.frame .info {
+      text-align: left;
       border-bottom: solid 1px #eaeaea;
       margin-bottom: 12px;
-    }
-
-    div.frame .info {
       color: DimGrey;
+      padding: 2px 0px 8px 16px;
     }
     div.frame .info strong {
-      color: LightSeaGreen;
+      color: Tomato;
+      font-weight: normal;
+    }
+    div.frame .info i {
+      display: inline-block;
+      color: #dfdfdf;
+      padding: 0 4px;
     }
 
     #title {
@@ -41,7 +48,7 @@
       padding: 32px 0 8px 0;
     }
 
-    h1 {
+    #title h1 {
       font-size: 1.23em;
       color: white;
     }
@@ -70,17 +77,11 @@
       if (fid != NaN && fid > 0) {
         console.log(fid);
         document.write('<div class="frame">');
-        document.write('<p class="info"><strong>fid</strong>:' + fid + '</p>');
+        document.write('<p class="info"><strong>fid</strong><i>=</i>' + fid + '</p>');
         document.write('<script type="text/javascript" src="//h.zucks.net.zimg.jp/j?f=' + fid + '"><\/script>');
         document.write('</div>');
       }
     }
-
-    // [].foreach(function(fid) {
-    //   document.write('<p><strong>fid</strong>:' + fid + '</p>');
-    //   document.write('<script type="text/javascript" src="//h.zucks.net.zimg.jp/j?f=' + fid + '"><\/script>');
-    //   document.write('<hr>');
-    // });
 
   </script>
 
