@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>Test</title>
+</head>
+<body>
+<!-- start -->
+
+<div id='ad'></div>
+<script type='text/javascript'>
+(function() {
+
+// Standard Tag の 'N' から ';sz' の間を指定する
+var placement = 'N5295.887085.ZUCKS.JP/B8555579.129496512';
+var width = '320px';
+var height = '50px';
+var iframe_breakout = false;
+
+// ---
+
+var lat = '%LAT%';
+var click = '%CLICK_URL%';
+var location = window.document.location;
+var protocol = (location && location.protocol === 'https:') ? 'https:' : 'http:';
+
+// ---
+
+var s = document.createElement('script');
+s.setAttribute('src', 'https://www.googletagservices.com/dcm/dcmads.js');
+
+var i = document.createElement('ins');
+i.id = 'ins';
+i.className = 'dcmads';
+i.style.display = 'inline-block';
+i.style.width = width;
+i.style.height = height;
+i.setAttribute('data-dcm-placement', placement);
+i.setAttribute('data-dcm-rendering-mode', 'javascript');
+i.setAttribute('data-dcm-https-only', true);
+i.setAttribute('data-dcm-resettable-device-id', lat);
+i.setAttribute('data-dcm-click-tracker', encodeURIComponent(protocol + click));
+i.setAttribute('data-dcm-disable-iframe-breakout', iframe_breakout);
+i.appendChild(s);
+
+var f = document.createElement('iframe');
+console.log(f);
+console.log(f.body);
+
+// var a = document.getElementById('ad');
+// a.appendChild(i);
+
+}());
+</script>
+
+<!-- end -->
+</body>
+</html>
