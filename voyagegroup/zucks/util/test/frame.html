@@ -12,7 +12,7 @@
     @import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
 
     * {
-      font-family: 'Noto Sans Japanese', Quicksand, 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+      font-family: 'Noto Sans Japanese', 'Quicksand', '游ゴシック体', 'Yu Gothic', 'YuGothic', 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', 'メイリオ', 'Meiryo', 'Osaka', 'ＭＳ Ｐゴシック', 'MS PGothic', 'sans-serif';
       margin: 0;
       padding: 0;
     }
@@ -22,7 +22,7 @@
     }
 
     div.frame {
-      border-bottom: solid 4px Tomato;
+      border-bottom: solid 4px #3949AB;
       padding: 12px 0;
     }
 
@@ -34,32 +34,63 @@
       padding: 2px 0px 8px 16px;
     }
     div.frame .info strong {
-      color: Tomato;
+      color: #3949AB;
       font-weight: normal;
     }
-    div.frame .info i {
+    div.frame .info .equal {
       display: inline-block;
+      font-style: none;
       color: #dfdfdf;
       padding: 0 4px;
     }
 
-    #title {
-      background-color: Tomato;
-      padding: 32px 0 8px 0;
+    #head {
+      font-family: Roboto;
+      background-color: #3949AB;
+      padding: 52px 0 12px 0;
     }
 
-    #title h1 {
-      font-size: 1.23em;
+    #head h1 {
+      font-weight: normal;
+      font-size: 1.33em;
       color: white;
+    }
+    #head form input[name=fid] {
+      font-weight: normal;
+      width: 50%;
+      color: white;
+      font-size: 1.13em;
+      padding: 12px 8px;
+      border: none;
+      border-bottom: solid 1px #efefef;
+      margin-bottom: 1px;
+      background-color: transparent;
+      outline: none;
+      box-shadow: none;
+    }
+    #head form input[name=fid]:focus {
+      border-bottom: solid 2px #efefef;
+      margin-bottom: 0px;
+    }
+    #head form input[name=fid]:-webkit-input-placeholder,
+    #head form input[name=fid]:-ms-input-placeholder,
+    #head form input[name=fid]:-moz-placeholder {
+      color: white;
+      opacity: 0.2;
+      font-weight: normal;
+      font-size: 1.0em;
     }
 
   </style>
 </head>
 <body>
 
-  <div id="title">
-    <h1>frame_id specifiable test page</h1>
-  </div>
+  <header id="head">
+    <h1>Frame ID specifiable test page</h1>
+    <form method="GET">
+      <input type="text" name="fid" placeholder="Search(123,456,789)" pattern="^([\d,]+)$" maxlength="50">
+    </form>
+  </header>
 
   <script type="text/javascript">
 
@@ -77,7 +108,7 @@
       if (fid != NaN && fid > 0) {
         console.log(fid);
         document.write('<div class="frame">');
-        document.write('<p class="info"><strong>fid</strong><i>=</i>' + fid + '</p>');
+        document.write('<p class="info"><strong>fid</strong><span class="equal">=</span>' + fid + '</p>');
         document.write('<script type="text/javascript" src="//h.zucks.net.zimg.jp/j?f=' + fid + '"><\/script>');
         document.write('</div>');
       }
