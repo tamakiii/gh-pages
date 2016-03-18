@@ -6,7 +6,7 @@
   <meta name="keywords" content="">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Frame IDs specifiable test page (version 0.0.2)</title>
+  <title>Frame IDs specifiable test page (version 0.0.3)</title>
   <style type="text/css">
 
     @import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
@@ -90,7 +90,7 @@
   <header id="head">
     <h1>Frame ID specifiable test page</h1>
     <form method="GET">
-      <input type="text" name="fid" placeholder="Search(123,456,789)" pattern="^([\d,]+)$" maxlength="50">
+      <input type="text" name="fid" id="search" placeholder="Search(123,456,789)" pattern="^([\d,]+)$" maxlength="50">
     </form>
   </header>
 
@@ -117,7 +117,11 @@
     }
 
   </script>
+  <script type="text/javascript">
+    (function() {
+      document.getElementById('search').value = getParam('fid');
+    })();
+  </script>
 
-<body>
 </body>
 </html>
