@@ -118,6 +118,11 @@
       return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
     }
 
+    zucksIdfa = {
+      ida: getParam('ida'),
+      lat: 0
+    }
+
     var fids = getParam('fid').split(',');
 
     for (var k in fids) {
