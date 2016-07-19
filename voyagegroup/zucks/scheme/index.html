@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>Android/iOS scheme test page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+<body>
+
+<ul class="hyper-link">
+    <li data-url="http://www.youtube.com/watch?v=TTAU7lLDZYU"></li>
+    <li data-url="http://www.youtube.com/v/TTAU7lLDZYU"></li>
+    <li data-url="youtube://"></li>
+    <li data-url="http://play.google.com/store/apps/details?id=com.google.android.youtube"></li>
+    <li data-url="youtube://TTAU7lLDZYU"></li>
+    <li data-url="vnd.youtube://TTAU7lLDZYU"></li>
+</ul>
+
+<script>
+
+$(function(){
+    $('ul.hyper-link').each(function() {
+        $(this).find('li').each(function() {
+            var url = $(this).attr('data-url');
+
+            $(this).append(
+                $('<a>').attr('href', url).text(url)
+            );
+        });
+    });
+});
+
+</script>
+
+</body>
+</html>
